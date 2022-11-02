@@ -1,6 +1,6 @@
 terraform {
 backend "s3" {
-  bucket         = "terraform-best-practices"
+  bucket         = "git-terraform-best-practices-1"
   key            = "terraform.tfstate"
   region         = "us-east-1"
 }
