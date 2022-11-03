@@ -17,7 +17,7 @@ variable "instance_1_name" {
 variable "instance_2_ami" {
   description = "Value of the AMI ID for the EC2 instance"
   type        = string
-  default     ="ami-08c40ec9ead489470" 
+  default     = "ami-08c40ec9ead489470"
 }
 
 variable "instance_2_type" {
@@ -33,22 +33,22 @@ variable "instance_2_name" {
 
 }
 
-variable "website_s3_bucket_1_name"{
+variable "website_s3_bucket_1_name" {
   description = "Value of the Name Tag for the S3 bucket"
   type        = string
 }
 
-variable "website_s3_bucket_2_name"{
+variable "website_s3_bucket_2_name" {
   description = "Value of the Name Tag for the S3 bucket"
   type        = string
 }
 
-variable "terraform"{
+variable "terraform" {
   description = "Value of the Terraform Tag for the S3 bucket"
   type        = string
 }
 
-variable "environment"{
+variable "environment" {
   description = "Value of the Environment Tag for the S3 bucket"
   type        = string
 }
