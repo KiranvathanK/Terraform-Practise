@@ -1,3 +1,7 @@
+resource "aws_key_pair" "terraform_best_practices_demo" {
+  key_name   = "terraform-best-practices-demo-key"
+  public_key = file("/home/ubuntu/.ssh/id_rsa.pub")
+}
 resource "aws_instance" "e1" {
   ami           = var.instance_1_ami
   instance_type = var.instance_1_type
@@ -27,6 +31,7 @@ module "website_s3_bucket_1" {
     Terraform   = var.terraform
     Environment = var.environment
   }
+	
 }
 
 module "website_s3_bucket_2" {
@@ -38,5 +43,16 @@ module "website_s3_bucket_2" {
     Terraform   = var.terraform
     Environment = var.environment
 
+  }
+	
+}
+
+resource "aws_dynamodb_table" "terraform_locks" {
+  name         = "terraform_locks"
+  billing_mode = "PAY_PER_REQUEST"
+  hash_key     = "LockID"
+  attribute {
+    name = "LockID"
+    type = "S"
   }
 }
